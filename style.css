@@ -1,0 +1,46 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.barra{
+    width: 207vh;
+    height: 15vh;
+    background-color: #7d03ad;
+    padding-left: 6vh;
+    display: flex;
+    align-items: center;
+}
+
+.barra h1{
+    font-family: "Gothic A1", sans-serif;
+    font-weight: 3;
+    font-size: 250%;
+}
+
+.todaTela{
+    background-color: #f7f7f7;
+}
+
+.contato{
+    width: 40vh;
+    display: flex;
+    flex-direction: row;
+    gap: 1vh;
+    padding-bottom: 3vh;
+    background-color: #f0f0f0;
+}
+
+.divImg img{
+    width: 10vh;
+    height: 10vh;
+}
+
+.divNome{
+    width: 25vh;
+    height: 10vh;
+    padding-top: 2.5vh;
+}
+
+
