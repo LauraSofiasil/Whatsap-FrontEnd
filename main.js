@@ -1,5 +1,7 @@
 'use strict'
 
+const todaTela = document.getElementById('tela')
+
 async function listarContatos(){
     const url =  'http://localhost:8080/v1/whatsapp/contatos/11987876567'
 
@@ -10,9 +12,7 @@ async function listarContatos(){
 }
 
 function criarContato(link){
-    const todaTela = document.getElementById('tela')
-    todaTela.classList = 'todaTela'
-    
+    //Barra lateral
     const contato = document.createElement('div')
     contato.classList = 'contato'
     
@@ -31,20 +31,54 @@ function criarContato(link){
     
     divNome.appendChild(nomeContato)
     divNome.classList = 'divNome'
+
+    const botao = document.getElementById('botao')
+
     
 
     contato.appendChild(divImg)
     contato.appendChild(divNome)
+    contato.appendChild(botao)
 
     todaTela.appendChild(contato)
 }
 
+async function mostrarConversas(){
+    const url =  'http://localhost:8080/v1/whatsapp/coversas/11987876567'
+
+    //Fetch conversa com o back - faz requisições
+    const response = await fetch(url)
+    const data = await response.json()
+    return data
+}
+
+function criarMenssagens(link){
+     
+    const divConversa = document.createElement('div')
+    divConversa.classList = 'conversa'
+
+    const conversa = document.createElement('p')
+    conversa.textContent = link.conversa
+
+    divConversa.appendChild(conversa)
+}
+
 async function preencher(){
-    const fotos = await listarContatos()
+    const contatos = await listarContatos()
     const tela = document.getElementById('tela')
     tela.replaceChildren('')
 
-    fotos.forEach (criarContato)
+    contatos.forEach (criarContato)
 }
 
 preencher()
+
+async function preencherMensagens(){
+    const conversas = await mostrarConversas()
+    const tela = document.getElementById('tela')
+    tela.replaceChildren('')
+
+    conversas.forEach(criarMenssagens)
+}
+
+document.getElementById('botao').addEventListener('click', preencherMensagens)

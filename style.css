@@ -10,17 +10,28 @@
     background-color: #7d03ad;
     padding-left: 6vh;
     display: flex;
+    flex-direction: row;
     align-items: center;
+    gap: 2vh;
 }
 
 .barra h1{
     font-family: "Gothic A1", sans-serif;
-    font-weight: 3;
+    font-weight: 0.5;
     font-size: 250%;
+    color: #f2f2f2;
 }
 
-.todaTela{
-    background-color: #f7f7f7;
+.barra img{
+    width: 10vh;
+    height: 10vh;
+}
+
+.tela{
+    background-color: #f3f3f3;
+    /* background-image: url('./imgs/feliz.png');
+    background-repeat: no-repeat;
+    background-position: 55% 40%; */
 }
 
 .contato{
@@ -30,6 +41,7 @@
     gap: 1vh;
     padding-bottom: 3vh;
     background-color: #f0f0f0;
+    padding-top: 2vh;
 }
 
 .divImg img{
@@ -43,4 +55,10 @@
     padding-top: 2.5vh;
 }
 
+/* .divMenssagens{
+    position: relative;
+    left: 50vh;
+    height: 40vh;
+    width: 40vh;
+} */
 
